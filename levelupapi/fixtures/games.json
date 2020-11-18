@@ -1,0 +1,14 @@
+[
+  {
+      "model": "levelupapi.game",
+      "pk": 2,
+      "fields": {
+          "title": "Scrabble",
+          "game_type": 1,
+          "maker": "Hasbro",
+          "number_of_players": 4,
+          "gamer": 1,
+          "skill_level": 2
+      }
+  }
+]
