@@ -7,8 +7,8 @@ class Event(models.Model):
 	on_delete=CASCADE, related_name="events",
 	related_query_name="event")
     description = models.TextField()
-    datetime = models.DateTimeField()
-
+    date = models.DateField(null=True)
+    time = models.TimeField(null=True)
     participant_events = models.ManyToManyField("Gamer",
 	related_name="participant_events",
 	related_query_name="participant_event")
