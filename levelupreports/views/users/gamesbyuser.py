@@ -19,7 +19,7 @@ def usergame_list(request):
                     g.id,
                     g.title,
                     g.maker,
-                    g.gametype_id,
+                    gt.label AS game_type_name,
                     g.number_of_players,
                     g.skill_level,
                     u.id user_id,
@@ -28,6 +28,8 @@ def usergame_list(request):
                     levelupapi_game g
                 JOIN
                     levelupapi_gamer gr ON g.gamer_id = gr.id
+                JOIN
+                    levelupapi_gametype gt ON g.gametype_id = gt.id
                 JOIN
                     auth_user u ON gr.user_id = u.id
             """)
@@ -57,13 +59,13 @@ def usergame_list(request):
             games_by_user = {}
 
             for row in dataset:
-                # Create a Game instance and set its properties
+                # Create a Game instance and set its properties. String in brackets matches the SQL results
                 game = Game()
                 game.title = row["title"]
                 game.maker = row["maker"]
                 game.skill_level = row["skill_level"]
                 game.number_of_players = row["number_of_players"]
-                game.gametype_id = row["gametype_id"]
+                game.gametype_label = row["game_type_name"]
 
                 # Store the user's id
                 uid = row["user_id"]
