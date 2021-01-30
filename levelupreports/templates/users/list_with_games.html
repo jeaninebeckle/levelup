@@ -9,11 +9,15 @@
     <h1>User Games</h1>
 
     {% for user in usergame_list %}
-        <h2>{{ user.full_name }}</h2>
+        <h2 style="color:blue">{{ user.full_name }}</h2>
         <ol>
             {% for game in user.games %}
             <li>
-                Title: {{ game.title }}
+                Title: {{ game.title }} <br>
+                Maker: {{ game.maker }} <br>
+                Skill Level: {{ game.skill_level }} <br>
+                Number of Players: {{ game.number_of_players }} <br>
+                Game Type: {{ game.gametype_label }} <br>
             </li>
             {% endfor %}
         </ol>
