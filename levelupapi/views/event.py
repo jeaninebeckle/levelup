@@ -215,7 +215,7 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
                   'description', 'date', 'time', 'joined')
 
 
-class GamerEventerializer(serializers.ModelSerializer):
+class GamerEventSerializer(serializers.ModelSerializer):
     """JSON serializer for event organizer"""
     user = EventUserSerializer(many=False)
 
