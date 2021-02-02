@@ -1,3 +1,4 @@
+CREATE VIEW EVENTS_BY_USER AS
 SELECT
     e.id,
     e.description,
