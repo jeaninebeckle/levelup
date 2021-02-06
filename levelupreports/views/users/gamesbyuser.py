@@ -50,7 +50,7 @@ def usergame_list(request):
             #     }
             # }
 
-            games_by_user = {}
+            games_by_user = {} #this is an empty object that could become a dictionary or a set
 
             for row in dataset:
                 # Create a Game instance and set its properties. String in brackets matches the SQL results
