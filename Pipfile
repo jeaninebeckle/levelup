@@ -12,6 +12,9 @@ pylint = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
 pylint-django = "*"
+gunicorn = "*"
+psycopg2 = "*"
+django-on-heroku = "*"
 
 [requires]
 python_version = "3.8"
